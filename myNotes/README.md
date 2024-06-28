@@ -1,0 +1,2 @@
+- First stage: Notes app utilizing redux to persist data
+- Second stage: 
