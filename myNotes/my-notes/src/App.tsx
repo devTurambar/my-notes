@@ -12,11 +12,12 @@ function App() {
     })
   };
   return (
-    <div className="App bg-black text-white font-serif pl-2 pt-2">
+    <div className="App bg-black text-white font-serif p-2">
       <div className=''>
         <Logo title="Notes"/>
       </div>
-      <Note title="First"/>
+      <Note title="Some title"/>
+      <Note title="Some title 2"/>
       {/* <button onClick={apiCall}>click me</button> */}
     </div>
   );
