@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
+import Note from "./components/Note"
+import Logo from "./components/Logo"
 
 function App() {
   const apiCall = () => {
@@ -10,8 +12,12 @@ function App() {
     })
   };
   return (
-    <div className="App">
-      <button onClick={apiCall}>click me</button>
+    <div className="App bg-black text-white font-serif pl-2 pt-2">
+      <div className=''>
+        <Logo title="Notes"/>
+      </div>
+      <Note title="First"/>
+      {/* <button onClick={apiCall}>click me</button> */}
     </div>
   );
 }
