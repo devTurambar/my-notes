@@ -4,6 +4,7 @@ import './App.css';
 import axios from "axios";
 import Note from "./components/Note"
 import Logo from "./components/Logo"
+import NotesList from "./components/NotesList"
 
 function App() {
   const apiCall = () => {
@@ -12,12 +13,11 @@ function App() {
     })
   };
   return (
-    <div className="App bg-black text-white font-serif p-2">
-      <div className=''>
+    <div className="App bg-black text-white font-serif p-4">
+      <div className='mb-8'>
         <Logo title="Notes"/>
       </div>
-      <Note title="Some title"/>
-      <Note title="Some title 2"/>
+      <NotesList />
       {/* <button onClick={apiCall}>click me</button> */}
     </div>
   );
