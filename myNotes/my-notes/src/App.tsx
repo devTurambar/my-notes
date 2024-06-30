@@ -1,24 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
+import MyRoutes from './routes/MyRoutes';
 import './App.css';
-import axios from "axios";
-import Note from "./components/Note"
-import Logo from "./components/Logo"
-import NotesList from "./components/NotesList"
 
 function App() {
-  const apiCall = () => {
-    axios.get("http://localhost:8080").then((data) => {
-      console.log(data);
-    })
-  };
   return (
     <div className="App bg-black text-white font-serif p-4">
-      <div className='mb-8'>
-        <Logo title="Notes"/>
-      </div>
-      <NotesList />
-      {/* <button onClick={apiCall}>click me</button> */}
+      <MyRoutes />
     </div>
   );
 }

@@ -8,6 +8,7 @@ export interface NotesState {
 
 interface Note{
     id:number,
+    title:string,
     content:string
 }
 const initialState:Array<Note> = [];

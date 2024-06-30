@@ -5,6 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './lib/store';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import InsideNote from './pages/InsideNote/InsideNote';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +15,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={ <App />}>
+            <Route path="/pages/InsideNote" element={<InsideNote />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

@@ -5,7 +5,8 @@ import {
     // change,
     addNote,
     selectNote
-  } from '../features/notes/notesSlice'
+  } from '../features/notes/notesSlice';
+  import { useState } from "react";
 
 const NodesList = () => {
     const notes = useAppSelector(selectNote);
@@ -15,12 +16,10 @@ const NodesList = () => {
         <div className="flex flex-col md:flex-row gap-4">
             {notes.map((e) => {
                 return (
-                    <div key={e.id}>
-                        <Note title={e.content} id={e.id}/>
-                    </div>
+                    <Note key={e.id} title={e.title} id={e.id} content={e.content}/>
                 )
             })}
-            <button onClick={() => dispatch(addNote({id:notes.length+1, content:"Second Note"}))} className='bg-slate-600 text-white rounded-md w-36'>add note</button>
+            <button onClick={() => dispatch(addNote({id:notes.length+1, title:"Título", content:"Second Note"}))} className='bg-slate-600 text-white rounded-md w-36'>add note</button>
         </div>
     )
 }
