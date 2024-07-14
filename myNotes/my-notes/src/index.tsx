@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { store } from './lib/store';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import InsideNote from './pages/InsideNote/InsideNote';
+import Home from './pages/Home/Home';
 
 
 const root = ReactDOM.createRoot(
@@ -19,6 +20,7 @@ root.render(
         <Routes>
           <Route path="/" element={ <App />}>
             <Route path="/pages/InsideNote" element={<InsideNote />} />
+            <Route path="/pages/Home" element={<Home />} />
           </Route>
         </Routes>
       </BrowserRouter>

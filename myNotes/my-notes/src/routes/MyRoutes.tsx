@@ -7,6 +7,7 @@ const MyRoutes = () => {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/pages/InsideNote" element={<InsideNote />} />
+            <Route path="/pages/Home" element={<Home />} />
         </Routes>
     )
 };

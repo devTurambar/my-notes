@@ -8,8 +8,8 @@ export interface NotesState {
 
 interface Note{
     id:number,
-    title:string,
-    content:string
+    title:string | undefined,
+    content:string | undefined
 }
 const initialState:Array<Note> = [];
 
@@ -42,6 +42,19 @@ export const notesSlice = createSlice({
         console.log("STATE", state);
         return [...state.filter((item) => item.id !== action.payload)];
     },
+    change: (state, action: PayloadAction<Note>) => {
+        return state.map((e) => {
+            if(e.id == action.payload.id){
+                return{
+                    ...e,
+                    title: action.payload.title,
+                    content: action.payload.content
+                }
+            }else{
+                return e;
+            }
+        });
+    },
     // Use the PayloadAction type to declare the contents of `action.payload`
     // change: (state, action: PayloadAction<Note>) => {
     //   state.notes = action.payload
@@ -64,7 +77,7 @@ export const notesSlice = createSlice({
 //   }
 })
 
-export const { erase, addNote } = notesSlice.actions
+export const { erase, addNote, change } = notesSlice.actions
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
