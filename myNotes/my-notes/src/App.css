@@ -1,3 +1,32 @@
 .App {
   min-height:100vh;
 }
+.grid-notes{
+  display: grid;
+  gap:1rem;
+}
+@media only screen and (min-width: 768px) {
+  .grid-notes {
+    /* grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-auto-flow: column; */
+    gap:1rem;
+    grid-auto-rows:150px;
+  }
+}
+
+.bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: #444444;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.navbar{
+  grid-template-columns:auto auto 1fr auto;
+  grid-template-areas: "a b c d";
+}
+.navbar :nth-child(3) {
+  grid-area:d;
+}

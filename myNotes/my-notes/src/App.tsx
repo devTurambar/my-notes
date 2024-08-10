@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App bg-black text-white font-serif p-4">
+    <div className="App bg-pink-bg text-white font-serif p-4">
       <MyRoutes />
     </div>
   );

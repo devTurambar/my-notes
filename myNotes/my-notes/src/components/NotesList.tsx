@@ -16,7 +16,7 @@ const NodesList = () => {
         // navigate("/pages/InsideNote");
     };
     return (
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="grid-notes">
             {notes.map((e) => {
                 return (
                     <Note key={e.id} title={e.title} id={e.id} content={e.content}/>
